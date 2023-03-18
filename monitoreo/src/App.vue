@@ -1,19 +1,17 @@
 <template>
   <div id="app">
-    <!-- <header>
-    </header> -->
-    <main>
-      <router-view></router-view>
-    </main>
-    <!-- <footer>
-    </footer> -->
+    <v-app>
+      <main>
+        <router-view></router-view>
+      </main>
+    </v-app>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App',
-}
+  name: "App",
+};
 </script>
 
 <style>
