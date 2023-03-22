@@ -30,7 +30,10 @@
 export default {
   props: {
     form: {},
-    initialData: {},
+    initialData: {
+      type: Object,
+      default: () => ({}),
+    },
   },
   data() {
     return {
@@ -38,10 +41,14 @@ export default {
     };
   },
   beforeMount() {
-    console.log(this.initialData);
     if (this.initialData) {
       this.currentData = this.initialData;
     }
+  },
+  methods: {
+    emitFormData() {
+      this.$emit("update-form-data", this.currentData);
+    },
   },
 };
 </script>

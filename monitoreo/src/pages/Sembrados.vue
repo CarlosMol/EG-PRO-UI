@@ -1,18 +1,18 @@
 <template>
   <div>
-    <crud-factory
+    <crud-table
       :headers="headers"
       :items="items"
       :title="title"
-    ></crud-factory>
+    ></crud-table>
   </div>
 </template>
 
 <script>
-import CrudFactory from "@/components/CrudFactory";
+import CrudTable from "@/components/CrudTable";
 export default {
   components: {
-    CrudFactory,
+    CrudTable,
   },
   data() {
     return {

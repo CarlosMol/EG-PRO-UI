@@ -1,27 +1,25 @@
 <template>
   <div>
-    <crud-factory
+    <crud-table
       :headers="headers"
       :items="items"
       :title="title"
       :form="form"
-    ></crud-factory>
+      :service="service"
+    ></crud-table>
   </div>
 </template>
 
 <script>
-import CrudFactory from "@/components/CrudFactory";
+import CrudTable from "@/components/CrudTable";
 import form from "@/static/forms/formPacelas.json";
+import { parcelasService as service } from "../services.api.js";
 export default {
   components: {
-    CrudFactory,
-  },
-  beforeUpdate() {
-    console.log("form", form);
+    CrudTable,
   },
   data() {
     return {
-      search: "",
       headers: [
         { text: "Id", value: "id" },
         { text: "Nombre", value: "nombre" },
@@ -29,18 +27,10 @@ export default {
         { text: "Area(m2)", value: "area" },
         { text: "Acciones", value: "actions", sortable: false },
       ],
-      items: [
-        { id: "1", nombre: "test", longitud: "-30", latitud: "40", area: "60" },
-        {
-          id: "7",
-          nombre: "test2",
-          longitud: "-30",
-          latitud: "40",
-          area: "50",
-        },
-      ],
+      items: [],
       title: "Parcelas",
       form,
+      service
     };
   },
 };

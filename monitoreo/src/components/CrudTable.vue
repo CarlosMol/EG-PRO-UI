@@ -32,23 +32,24 @@
         </template>
       </v-data-table>
     </v-card>
-    <Modals
+    <FormModal
       @close="closeModal()"
       :title="title"
       :form="form"
       :open="open"
+      :service="service"
       :initialData="initialData"
-    ></Modals>
+    ></FormModal>
   </v-container>
 </template>
 
 <script>
-import Modals from "@/components/Modals";
+import FormModal from "@/components/FormModal";
 import Swal from "sweetalert2";
 
 export default {
   components: {
-    Modals,
+    FormModal,
   },
   props: {
     headers: {
@@ -64,6 +65,7 @@ export default {
       default: "",
     },
     form: {},
+    service: {},
   },
   beforeMount() {},
   data() {

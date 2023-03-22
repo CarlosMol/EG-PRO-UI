@@ -7,7 +7,12 @@
         </v-card-title>
         <v-divider></v-divider>
         <v-card-text>
-          <FormsFactory :form="form" :initialData="initialData"></FormsFactory>
+          <AutoForm
+            ref="autoForm"
+            :form="form"
+            :initialData="initialData"
+            @update-form-data="updateFormData"
+          ></AutoForm>
         </v-card-text>
         <v-divider></v-divider>
 
@@ -21,11 +26,11 @@
 </template>
 
 <script>
-import FormsFactory from "../components/FormsFactory";
+import AutoForm from "../components/AutoForm";
 
 export default {
   components: {
-    FormsFactory,
+    AutoForm,
   },
   props: {
     title: {
@@ -33,23 +38,47 @@ export default {
       default: "",
     },
     form: {},
-    //TODO: refactorizar nombres open modal
     open: {
       type: Boolean,
       default: false,
     },
-    initialData: {},
+    initialData: {
+      type: Object,
+      default: () => ({}),
+    },
+    service: {},
   },
   data() {
-    return {};
+    return {
+      formData: {},
+    };
   },
-  
+  watch: {
+    initialData: {
+      deep: true,
+      handler() {
+        this.$refs.autoForm.emitFormData();
+      },
+    },
+  },
   methods: {
     closeModal() {
       this.$emit("close");
     },
     save() {
-      console.log("guardando...");
+      this.service
+        .createParcelas(this.formData)
+        .then((result) => {
+          console.log(result);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    updateFormData(data) {
+      if (Object.keys(this.initialData).length > 0) {
+        this.formData = data;
+      }
     },
   },
 };
