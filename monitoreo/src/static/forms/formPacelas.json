@@ -1,0 +1,35 @@
+{
+  "title": "Parcelas",
+  "fields": [
+    {
+      "type": "text",
+      "size": "4",
+      "value": "nombre",
+      "label": "Nombre"
+    },
+    {
+      "size": "6"
+    },
+    {
+      "type": "text",
+      "size": "4",
+      "value": "longitud",
+      "label": "Longitud",
+      "auxType": "number"
+    },
+    {
+      "type": "text",
+      "size": "4",
+      "value": "latitud",
+      "label": "Latitud",
+      "auxType": "number"
+    },
+    {
+      "type": "text",
+      "size": "4",
+      "value": "area",
+      "label": "Area(m2)",
+      "auxType": "number"
+    }
+  ]
+}
