@@ -20,6 +20,14 @@
             :label="item.label"
             :type="item.auxType"
           ></v-text-field>
+          <div v-if="item.type === 'table'">
+            <editable-table
+              :headers="item.headers"
+              :items="options"
+              :subform="item.subform"
+              @update-items="currentData[item.value] = $event"
+            ></editable-table>
+          </div>
         </v-col>
       </template>
     </v-row>
@@ -27,6 +35,7 @@
 </template>
 
 <script>
+import EditableTable from "./EditableTable.vue";
 export default {
   props: {
     form: {},
@@ -35,9 +44,11 @@ export default {
       default: () => ({}),
     },
   },
+  components: { EditableTable },
   data() {
     return {
       currentData: {},
+      options: [],
     };
   },
   beforeMount() {
@@ -53,5 +64,5 @@ export default {
 };
 </script>
 
-<style>
+<style >
 </style>

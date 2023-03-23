@@ -8,28 +8,22 @@
       "label": "Nombre"
     },
     {
-      "size":"6"
+      "type": "date",
+      "size": "6",
+      "value": "fechaSiembra",
+      "label": "Fecha Siembra"
     },
     {
       "type": "text",
       "size": "6",
-      "value": "longitud",
-      "label": "Longitud",
-      "auxType": "number"
+      "value": "semilla",
+      "label": "Semilla"
     },
     {
       "type": "text",
       "size": "6",
-      "value": "latitud",
-      "label": "Latitud",
-      "auxType": "number"
-    },
-    {
-      "type": "text",
-      "size": "6",
-      "value": "area",
-      "label": "Area(m2)",
-      "auxType": "number"
+      "value": "parcela",
+      "label": "Parcela"
     }
   ]
 }

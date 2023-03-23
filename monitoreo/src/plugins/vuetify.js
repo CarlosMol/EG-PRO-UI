@@ -4,7 +4,18 @@ import "vuetify/dist/vuetify.min.css";
 
 Vue.use(Vuetify);
 
-
 export default new Vuetify({
-  theme: { dark: false },
+  theme: {
+    themes: {
+      light: {
+        primary: "#4CAF50",
+        secondary: "#607d8b",
+        accent: "#607d8b",
+        info: "#00CAE3",
+        text: "#212121",
+      },
+    },
+  },
 });
+
+import "vuetify/dist/vuetify.min.css";
