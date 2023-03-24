@@ -14,12 +14,55 @@
           :key="index"
           :cols="item.size"
         >
+          <!-- text -->
           <v-text-field
             v-if="item.type === 'text'"
             v-model="currentData[item.value]"
             :label="item.label"
             :type="item.auxType"
           ></v-text-field>
+
+          <!-- date -->
+          <v-menu
+            v-if="item.type === 'date'"
+            :close-on-content-click="false"
+            :nudge-right="40"
+            lazy
+            transition="scale-transition"
+            offset-y
+            full-width
+            min-width="290px"
+          >
+            <template v-slot:activator="{ on, attrs }">
+              <v-text-field
+                :value="currentData[item.value]"
+                :label="item.label"
+                prepend-icon="mdi-calendar"
+                readonly
+                v-bind="attrs"
+                v-on="on"
+                slot="activator"
+              ></v-text-field>
+            </template>
+            <v-date-picker
+              v-model="currentData[item.value]"
+              scrollable
+              locale="es"
+            >
+            </v-date-picker>
+          </v-menu>
+
+          <!-- radio -->
+          <v-radio-group
+            v-if="item.type === 'radio'"
+            v-model="currentData[item.value]"
+            :label="item.label"
+            row
+          >
+            <v-radio label="Sí" :value="true"></v-radio>
+            <v-radio label="No" :value="false"></v-radio>
+          </v-radio-group>
+
           <div v-if="item.type === 'table'">
             <editable-table
               :headers="item.headers"
@@ -49,6 +92,7 @@ export default {
     return {
       currentData: {},
       options: [],
+      menu: false,
     };
   },
   beforeMount() {
@@ -64,5 +108,4 @@ export default {
 };
 </script>
 
-<style >
-</style>
+<style></style>

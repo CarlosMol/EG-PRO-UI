@@ -8,35 +8,25 @@
       "label": "Nombre"
     },
     {
-      "type": "table",
-      "size": "12",
-      "value": "opciones",
-      "label": "Opciones",
-      "headers": [
-        { "text": "Variables", "value": "type" },
-        { "text": "Min", "value": "min" },
-        { "text": "Max", "value": "max" }
-      ],
-      "subform": [
-        {
-          "type": "text",
-          "value": "type",
-          "label": "Variable",
-          "noDataMessage": "Seleccione una variable"
-        },
-        {
-          "type": "text",
-          "value": "min",
-          "label": "Valor mínimo",
-          "noDataMessage": "Ingrese valor mínimo"
-        },
-        {
-          "type": "text",
-          "value": "max",
-          "label": "Valor máximo",
-          "noDataMessage": "Ingrese valor máximo"
-        }
-      ]
+      "size":"6"
+    },
+    {
+      "type":"radio",
+      "size":"4",
+      "value":"temperatura",
+      "label":"Temperatura"
+    },
+    {
+      "type":"radio",
+      "size":"4",
+      "value":"velocidadViento",
+      "label":"Velocidad Viento"
+    },
+    {
+      "type":"radio",
+      "size":"4",
+      "value":"direccionViento",
+      "label":"Dirección Viento"
     }
   ]
 }

@@ -19,6 +19,7 @@ export default {
         icon: "success",
         title: message,
         showConfirmButton: true,
+        allowOutsideClick: false,
         confirmButtonText: "Cerrar",
       }).then((result) => {
         if (result.isConfirmed) {
