@@ -8,28 +8,36 @@
       "label": "Nombre"
     },
     {
-      "size":"6"
+      "type": "text",
+      "size": "6",
+      "value": "cultivo",
+      "label": "Cultivo"
     },
     {
       "type": "text",
-      "size": "4",
+      "size": "6",
       "value": "longitud",
       "label": "Longitud",
       "auxType": "number"
     },
     {
       "type": "text",
-      "size": "4",
+      "size": "6",
       "value": "latitud",
       "label": "Latitud",
       "auxType": "number"
     },
     {
       "type": "text",
-      "size": "4",
-      "value": "area",
-      "label": "Area(m2)",
-      "auxType": "number"
+      "size": "6",
+      "value": "departamento",
+      "label": "Departamento"
+    },
+    {
+      "type": "text",
+      "size": "6",
+      "value": "municipio",
+      "label": "Municipio"
     }
   ]
 }

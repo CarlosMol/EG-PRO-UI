@@ -13,8 +13,8 @@
 
 <script>
 import CrudTable from "@/components/CrudTable";
-import form from "@/static/forms/formSemillas.json";
-import { semillasService as service } from "../services.api.js";
+import form from "@/static/forms/formPacelas.json";
+import { parcelasService as service } from "../services.api.js";
 import dataMixin from "@/mixins/dataMixin";
 
 export default {
@@ -27,18 +27,20 @@ export default {
       headers: [
         { text: "Id", value: "id" },
         { text: "Nombre", value: "nombre" },
-        { text: "Temperatura", value: "temperatura" },
-        { text: "Velocidad Viento", value: "velocidadViento" },
-        { text: "Dirección Viento", value: "direccionViento" },
+        { text: "Cultivo", value: "cultivo" },
+        { text: "Longitud", value: "longitud" },
+        { text: "Latitud", value: "latitud" },
+        { text: "Departamento", value: "departamento" },
+        { text: "Municipio", value: "municipio" },
         { text: "Acciones", value: "actions", sortable: false },
       ],
       items: [],
-      title: "Semillas",
+      title: "Parcelas",
       form,
       service,
     };
   },
+  methods: {},
 };
 </script>
 <style></style>
-z

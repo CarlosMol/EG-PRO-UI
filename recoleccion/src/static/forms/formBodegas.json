@@ -1,0 +1,44 @@
+{
+  "title": "Bodgas",
+  "fields": [
+    {
+      "type": "text",
+      "size": "6",
+      "value": "nombre",
+      "label": "Nombre"
+    },
+    {
+      "type": "text",
+      "size": "6",
+      "value": "longitud",
+      "label": "Longitud",
+      "auxType": "number"
+    },
+    {
+      "type": "text",
+      "size": "6",
+      "value": "latitud",
+      "label": "Latitud",
+      "auxType": "number"
+    },
+    {
+      "type": "text",
+      "size": "6",
+      "value": "capacidad",
+      "label": "Capacidad",
+      "auxType": "number"
+    },
+    {
+      "type": "text",
+      "size": "6",
+      "value": "departamento",
+      "label": "Departamento"
+    },
+    {
+      "type": "text",
+      "size": "6",
+      "value": "municipio",
+      "label": "Municipio"
+    }
+  ]
+}
