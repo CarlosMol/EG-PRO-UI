@@ -1,5 +1,5 @@
 let router = {
-  reportes: "/",
+  entregas: "/",
   parcelas: "/parcelas",
   bodegas: "/bodegas",
 };

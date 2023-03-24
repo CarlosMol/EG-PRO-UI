@@ -4,8 +4,8 @@ const menu = {
   items: [
     {
       icon: "mdi-file-document",
-      text: "Reportes",
-      route: router.reportes,
+      text: "Entregas",
+      route: router.entregas,
     },
     {
       icon: "mdi-map",

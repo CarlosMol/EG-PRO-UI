@@ -4,12 +4,12 @@ import VueRouter from "vue-router";
 
 import Parcelas from "./pages/Parcelas.vue";
 import Bodegas from "./pages/Bodegas.vue";
-import Reportes from "./pages/Reportes.vue";
+import Entregas from "./pages/Entregas.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
-  { path: "/", component: Reportes },
+  { path: "/", component: Entregas },
   { path: "/parcelas", component: Parcelas },
   { path: "/bodegas", component: Bodegas },
 ];

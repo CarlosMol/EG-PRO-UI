@@ -1,0 +1,33 @@
+{
+  "title": "Entregas",
+  "fields": [
+    {
+      "type": "external",
+      "size": "6",
+      "value": "idParcela",
+      "label": "Origen",
+      "service": "parcelas",
+      "items": []
+    },
+    {
+      "type": "external",
+      "size": "6",
+      "value": "idBodega",
+      "label": "Destino",
+      "service": "bodegas",
+      "items": []
+    },
+    {
+      "type": "date",
+      "size": "6",
+      "value": "fechaSalida",
+      "label": "Fecha Salida"
+    },
+    {
+      "type": "time",
+      "size": "6",
+      "value": "horaSalida",
+      "label": "Hora Salida"
+    }
+  ]
+}

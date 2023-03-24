@@ -52,6 +52,35 @@
             </v-date-picker>
           </v-menu>
 
+          <v-menu
+            v-if="item.type === 'time'"
+            :close-on-content-click="false"
+            :nudge-right="40"
+            lazy
+            transition="scale-transition"
+            offset-y
+            full-width
+            min-width="290px"
+          >
+            <template v-slot:activator="{ on, attrs }">
+              <v-text-field
+                :value="currentData[item.value]"
+                :label="item.label"
+                prepend-icon="mdi-clock-time-three-outline"
+                readonly
+                v-bind="attrs"
+                v-on="on"
+                slot="activator"
+              ></v-text-field>
+            </template>
+            <v-time-picker
+              v-model="currentData[item.value]"
+              scrollable
+              format="24hr"
+            >
+            </v-time-picker>
+          </v-menu>
+
           <!-- radio -->
           <v-radio-group
             v-if="item.type === 'radio'"
