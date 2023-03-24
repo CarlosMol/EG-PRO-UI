@@ -8,6 +8,11 @@ const menu = {
       route: router.repotes,
     },
     {
+      icon: "mdi-clipboard-text",
+      text: "Planes",
+      route: router.planes,
+    },
+    {
       icon: "mdi-sprout",
       text: "Sembrados",
       route: router.sembrados,
@@ -21,11 +26,6 @@ const menu = {
       icon: "mdi-map",
       text: "Parcelas",
       route: router.parcelas,
-    },
-    {
-      icon: "mdi-clipboard-text",
-      text: "Planes",
-      route: router.planes,
     },
   ],
 };

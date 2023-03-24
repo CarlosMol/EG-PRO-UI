@@ -11,9 +11,7 @@
           v-model="search"
         ></v-text-field>
         <v-spacer></v-spacer>
-        <v-btn color="primary" @click="openModal()">{{
-          isEditing ? "EDITAR" : "CREAR"
-        }}</v-btn>
+        <v-btn color="primary" @click="openModal()">CREAR</v-btn>
       </v-card-title>
 
       <v-data-table :headers="headers" :items="items" :search="search">
@@ -23,7 +21,7 @@
 
         <template v-slot:item.actions="{ item }">
           <v-icon @click="openModal(true, item)" size="16">mdi-pencil</v-icon>
-          <v-icon class="ml-2" @click="deleteItem(item)" size="16"
+          <v-icon class="ml-2" @click="confirmDelete(item)" size="16"
             >mdi-delete</v-icon
           >
         </template>
@@ -34,11 +32,13 @@
     </v-card>
     <FormModal
       @close="closeModal()"
+      @reload="reloadData()"
       :title="title"
       :form="form"
       :open="open"
       :service="service"
       :initialData="initialData"
+      :isEditing="isEditing"
     ></FormModal>
   </v-container>
 </template>
@@ -46,8 +46,10 @@
 <script>
 import FormModal from "@/components/FormModal";
 import Swal from "sweetalert2";
+import dataMixin from "@/mixins/dataMixin";
 
 export default {
+  mixins: [dataMixin],
   components: {
     FormModal,
   },
@@ -80,15 +82,13 @@ export default {
   methods: {
     openModal(isEditing, item) {
       if (isEditing) {
-        console.log("item", item);
         this.initialData = Object.assign({}, item);
+        this.isEditing = true;
       }
       this.open = true;
     },
-    editItem(item) {
-      console.log("editando...", item);
-    },
-    deleteItem(item) {
+    confirmDelete(item) {
+      //FIXME:
       Swal.fire({
         title: "¿Está seguro que desea eliminar este elemento?",
         icon: "warning",
@@ -97,16 +97,19 @@ export default {
         cancelButtonText: "Cancelar",
       }).then((result) => {
         if (result.isConfirmed) {
-          this.confirmAction(item);
+          this.deleteItem(item).then(() => {
+            this.reloadData();
+          });
         }
       });
-    },
-    confirmAction(item) {
-      console.log(item);
     },
     closeModal() {
       this.initialData = {};
       this.open = false;
+      this.isEditing = false;
+    },
+    reloadData() {
+      this.$emit("reload");
     },
   },
 };

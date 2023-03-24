@@ -1,6 +1,8 @@
-export * as parcelasService from "./api/parcelas";
-export * as planesService from "./api/planes";
-export * as sembradosService from "./api/sembrados";
-export * as semillasService from "./api/semillas";
+import parcelasService from "./api/parcelas";
+import planesService from "./api/planes";
+import sembradosService from "./api/sembrados";
+import semillasService from "./api/semillas";
+
+export { parcelasService, planesService, sembradosService, semillasService };
 
 //TODO: repotes

@@ -27,8 +27,11 @@
 
 <script>
 import AutoForm from "../components/AutoForm";
+import swalMixin from "@/mixins/swalMixin";
+import Swal from "sweetalert2";
 
 export default {
+  mixins: [swalMixin],
   components: {
     AutoForm,
   },
@@ -47,6 +50,10 @@ export default {
       default: () => ({}),
     },
     service: {},
+    isEditing: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
@@ -57,7 +64,9 @@ export default {
     initialData: {
       deep: true,
       handler() {
-        this.$refs.autoForm.emitFormData();
+        if (this.$refs.autoForm) {
+          this.$refs.autoForm.emitFormData();
+        }
       },
     },
   },
@@ -65,16 +74,24 @@ export default {
     closeModal() {
       this.$emit("close");
     },
-    save() {
-      this.service
-        .createParcelas(this.formData)
-        .then((result) => {
-          console.log(result);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+    async save() {
+      this.showLoading();
+      try {
+        const operation = this.isEditing
+          ? this.service.update
+          : this.service.create;
+        const result = await operation(this.formData);
+        console.log(result);
+        this.$emit("reload")
+        this.showSuccessMessage();
+      } catch (error) {
+        console.log(error);
+        this.showErrorMessage();
+      } finally {
+        Swal.hideLoading();
+      }
     },
+
     updateFormData(data) {
       if (Object.keys(this.initialData).length > 0) {
         this.formData = data;
