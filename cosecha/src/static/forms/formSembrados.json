@@ -1,0 +1,33 @@
+{
+  "title": "Parcelas",
+  "fields": [
+    {
+      "type": "text",
+      "size": "6",
+      "value": "nombre",
+      "label": "Nombre"
+    },
+    {
+      "type": "date",
+      "size": "6",
+      "value": "fechaSiembra",
+      "label": "Fecha Siembra"
+    },
+    {
+      "type": "external",
+      "size": "6",
+      "value": "idSemilla",
+      "label": "Semilla",
+      "service": "semillas",
+      "items": []
+    },
+    {
+      "type": "external",
+      "size": "6",
+      "value": "idParcela",
+      "label": "Parcela",
+      "service": "parcelas",
+      "items": []
+    }
+  ]
+}
