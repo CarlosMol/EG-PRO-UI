@@ -14,16 +14,20 @@
       "label": "Fecha Siembra"
     },
     {
-      "type": "text",
+      "type": "external",
       "size": "6",
-      "value": "semilla",
-      "label": "Semilla"
+      "value": "idSemilla",
+      "label": "Semilla",
+      "service": "semillas",
+      "items": []
     },
     {
-      "type": "text",
+      "type": "external",
       "size": "6",
-      "value": "parcela",
-      "label": "Parcela"
+      "value": "idParcela",
+      "label": "Parcela",
+      "service": "parcelas",
+      "items": []
     }
   ]
 }

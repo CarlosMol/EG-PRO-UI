@@ -39,6 +39,7 @@
       :service="service"
       :initialData="initialData"
       :isEditing="isEditing"
+      :formServices="formServices"
     ></FormModal>
   </v-container>
 </template>
@@ -68,6 +69,10 @@ export default {
     },
     form: {},
     service: {},
+    formServices: {
+      type: Array,
+      default: () => [],
+    },
   },
   beforeMount() {},
   data() {
@@ -115,5 +120,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

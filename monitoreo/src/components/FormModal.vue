@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-dialog v-if="open" v-model="open" persistent>
+    <v-dialog v-if="open" v-model="open" persistent max-width="800">
       <v-card>
         <v-card-title class="title">
           {{ title }}
@@ -12,6 +12,7 @@
             :form="form"
             :initialData="initialData"
             @update-form-data="updateFormData"
+            :formServices="formServices"
           ></AutoForm>
         </v-card-text>
         <v-divider></v-divider>
@@ -54,6 +55,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    formServices: {
+      type: Array,
+      default: () => [],
+    },
   },
   data() {
     return {
@@ -82,7 +87,7 @@ export default {
           : this.service.create;
         const result = await operation(this.formData);
         console.log(result);
-        this.$emit("reload")
+        this.$emit("reload");
         this.showSuccessMessage();
       } catch (error) {
         console.log(error);
@@ -101,5 +106,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

@@ -25,6 +25,7 @@ export default {
   data() {
     return {
       headers: [
+        { text: "Id", value: "id" },
         { text: "Nombre", value: "nombre" },
         { text: "Temperatura", value: "temperatura" },
         { text: "Velocidad Viento", value: "velocidadViento" },

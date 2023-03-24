@@ -63,6 +63,15 @@
             <v-radio label="No" :value="false"></v-radio>
           </v-radio-group>
 
+          <!-- external -->
+          <v-select
+            v-if="item.type === 'external'"
+            :items="item.items"
+            v-model="currentData[item.value]"
+            :label="item.label"
+          ></v-select>
+
+          <!-- Table -->
           <div v-if="item.type === 'table'">
             <editable-table
               :headers="item.headers"
@@ -86,6 +95,10 @@ export default {
       type: Object,
       default: () => ({}),
     },
+    formServices: {
+      type: Array,
+      default: () => [],
+    },
   },
   components: { EditableTable },
   data() {
@@ -99,10 +112,30 @@ export default {
     if (this.initialData) {
       this.currentData = this.initialData;
     }
+    this.getExternalItems();
   },
   methods: {
     emitFormData() {
       this.$emit("update-form-data", this.currentData);
+    },
+    getExternalItems() {
+      this.form.fields.forEach((field) => {
+        if (field.type === "external") {
+          const formService = this.formServices.find(
+            (s) => s.name === field.service
+          );
+          if (formService) {
+            formService.service.list().then((result) => {
+              field.items = result.data.map((el) => {
+                return {
+                  text: el.nombre,
+                  value: el.id,
+                };
+              });
+            });
+          }
+        }
+      });
     },
   },
 };

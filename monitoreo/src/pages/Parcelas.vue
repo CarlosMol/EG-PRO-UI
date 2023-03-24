@@ -27,7 +27,6 @@ export default {
       headers: [
         { text: "Id", value: "id" },
         { text: "Nombre", value: "nombre" },
-
         { text: "Area(m2)", value: "area" },
         { text: "Acciones", value: "actions", sortable: false },
       ],
