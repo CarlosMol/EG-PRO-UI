@@ -1,9 +1,6 @@
 let router = {
-    repotes:"/",
-    semillas:"/semillas",
-    sembrados:"/sembrados",
     parcelas:"/parcelas",
-    planes:"/planesMonitoreo",
+    predios:"/predios"
 };
 
 export default router;

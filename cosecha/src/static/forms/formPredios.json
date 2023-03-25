@@ -1,19 +1,18 @@
 {
-  "title": "Parcelas",
+  "title": "Predios",
   "fields": [
     {
-      "type": "external",
+      "type": "text",
       "size": "6",
-      "value": "idPredio",
-      "label": "Predio",
-      "service": "predios",
-      "items": []
+      "value": "nombre",
+      "label": "Descripción"
     },
     {
       "type": "text",
       "size": "6",
-      "value": "cultivo",
-      "label": "Cultivo"
+      "value": "area",
+      "label": "Area(m2)",
+      "auxType": "number"
     },
     {
       "type": "text",
@@ -32,8 +31,8 @@
     {
       "type": "text",
       "size": "6",
-      "value": "direccion",
-      "label": "Direccion"
+      "value": "clima",
+      "label": "Clima"
     }
   ]
 }

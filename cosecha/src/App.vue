@@ -3,7 +3,7 @@
     <v-app>
       <v-toolbar color="primary" dark :max-height="toolbarHeight">
         <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-        <v-toolbar-title>Monitoreo</v-toolbar-title>
+        <v-toolbar-title>Predios</v-toolbar-title>
         <v-spacer></v-spacer>
       </v-toolbar>
       <v-navigation-drawer
