@@ -3,11 +3,6 @@ import router from "./routes";
 const menu = {
   items: [
     {
-      icon: "mdi-file-document",
-      text: "Reportes",
-      route: router.repotes,
-    },
-    {
       icon: "mdi-clipboard-text",
       text: "Planes",
       route: router.planes,

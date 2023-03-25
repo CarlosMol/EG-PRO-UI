@@ -22,6 +22,15 @@
             :type="item.auxType"
           ></v-text-field>
 
+          <!-- select -->
+
+          <v-select
+            v-if="item.type === 'select'"
+            :items="item.items"
+            v-model="currentData[item.value]"
+            :label="item.label"
+          ></v-select>
+
           <!-- date -->
           <v-menu
             v-if="item.type === 'date'"

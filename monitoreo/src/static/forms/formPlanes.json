@@ -1,0 +1,23 @@
+{
+  "title": "Planes",
+  "fields": [
+    {
+      "type": "external",
+      "size": "6",
+      "value": "idSembrado",
+      "label": "Sembrado",
+      "service": "sembrados",
+      "items": []
+    },
+    {
+      "type": "select",
+      "size": "6",
+      "items": [
+        { "text": "Diario", "value": "1" },
+        { "text": "Semanal", "value": "2" }
+      ],
+      "label": "Frecuencia del reporte",
+      "value": "frecuencia"
+    }
+  ]
+}

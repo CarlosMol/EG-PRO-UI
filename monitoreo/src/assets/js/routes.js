@@ -1,5 +1,4 @@
 let router = {
-    repotes:"/",
     semillas:"/semillas",
     sembrados:"/sembrados",
     parcelas:"/parcelas",
